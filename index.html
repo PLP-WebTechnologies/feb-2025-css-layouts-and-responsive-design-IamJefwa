@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Jefwa Kalama</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="home" class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Professional UI/UX Designer & Frontend Developer</p>
+        </section>
+
+        <section id="services" class="features">
+            <article class="feature-card">
+                <div class="feature-icon">🚀</div>
+                <h2>Web Development</h2>
+                <p>Modern websites built with React, Next.js and Tailwind CSS for optimal performance.</p>
+                <a href="#portfolio" class="learn-more">View Work</a>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">🎨</div>
+                <h2>UI/UX Design</h2>
+                <p>Beautiful interfaces designed in Figma with focus on usability and accessibility.</p>
+                <a href="#portfolio" class="learn-more">View Work</a>
+            </article>
+            <article class="feature-card">
+                <div class="feature-icon">📱</div>
+                <h2>Responsive Design</h2>
+                <p>Mobile-first approach ensuring perfect display on all devices and screen sizes.</p>
+                <a href="#portfolio" class="learn-more">View Work</a>
+            </article>
+        </section>
+
+        <section id="about" class="content-grid">
+            <div class="main-content">
+                <h2>About Me</h2>
+                <p>I'm a passionate frontend developer with expertise in creating beautiful, functional websites. With 3 years of experience in the industry, I specialize in React development and UI design.</p>
+                <p>My approach combines technical skills with creative design thinking to deliver products that users love.</p>
+            </div>
+            <aside class="sidebar">
+                <h3>My Skills</h3>
+                <ul class="skills-list">
+                    <li>HTML5/CSS3</li>
+                    <li>JavaScript/React</li>
+                    <li>Next.js</li>
+                    <li>Tailwind CSS</li>
+                    <li>Figma</li>
+                    <li>UI/UX Design</li>
+                </ul>
+            </aside>
+        </section>
+
+        <section id="portfolio" class="portfolio">
+            <h2>My Work</h2>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">Project 1</div>
+                <div class="portfolio-item">Project 2</div>
+                <div class="portfolio-item">Project 3</div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Get In Touch</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name">
+                <input type="email" placeholder="Your Email">
+                <textarea placeholder="Your Message"></textarea>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Jefwa Kalma. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            
+            hamburger.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                hamburger.textContent = navLinks.classList.contains('active') ? '✕' : '☰';
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    navLinks.classList.remove('active');
+                    hamburger.textContent = '☰';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
